@@ -66,7 +66,7 @@ made strong. Join the list to hear when we open.">
 
     /* Hero Section */
     .hero-section {
-      background-image: url('hero-background.png');
+      background-image: url('https://mimloo.com/assets/hero-background.png');
       background-size: cover;
       background-position: center;
       background-repeat: no-repeat;
@@ -93,7 +93,11 @@ made strong. Join the list to hear when we open.">
     .form-control { border: none; border-radius: 25px; padding: 1rem 1.5rem; font-size: 1rem; margin-bottom: 1rem; background: rgba(255, 255, 255, 0.95); }
     .form-control:focus { box-shadow: 0 0 0 3px rgba(173, 201, 181, 0.3); border-color: var(--mimloo-green); }
     .btn-newsletter { background: var(--coral); color: white; border: none; border-radius: 25px; padding: 1rem 2.5rem; font-size: 1.1rem; font-weight: 500; transition: all 0.3s ease; text-transform: uppercase; letter-spacing: 0.5px; }
-    .btn-newsletter:hover { background: #c49681; transform: translateY(-2px); box-shadow: 0 5px 15px rgba(216, 164, 143, 0.4); color: white; }
+    .btn-newsletter:hover:not(:disabled) { background: #c49681; transform: translateY(-2px); box-shadow: 0 5px 15px rgba(216, 164, 143, 0.4); color: white; }
+    .btn-newsletter:disabled { opacity: 0.7; cursor: not-allowed; transform: none; }
+
+    /* Status message */
+    .newsletter-status { margin-top: 1rem; font-size: 1rem; min-height: 1.5rem; }
 
     /* Footer */
     .footer { background: var(--story-sheet); padding: 2rem 0; text-align: center; color: var(--enchanted-green); }
@@ -160,6 +164,7 @@ made strong. Join the list to hear when we open.">
                         </div>
                         <button type="submit" class="btn btn-newsletter">Notify Me</button>
                     </form>
+                    <div id="newsletter-status" class="newsletter-status"></div>
                 </div>
             </div>
         </div>
@@ -219,9 +224,8 @@ made strong. Join the list to hear when we open.">
 
         submitting = true;
         button.disabled = true;
-        const originalLabel = button.dataset.labelDefault || 'Notify Me';
-        const doneLabel = button.dataset.labelDone || 'Thank You!';
         button.textContent = 'Sending…';
+        status.textContent = '';
 
         try {
           const data = new FormData(form);
@@ -232,19 +236,22 @@ made strong. Join the list to hear when we open.">
           });
 
           if (res.ok) {
-            button.textContent = doneLabel;
+            // Success: Clear form, keep button disabled, show success message
+            button.textContent = 'Thank You!';
             status.textContent = "You're on the list. Thanks for signing up!";
             emailInput.value = '';
+            // Keep button disabled and submitting true
           } else {
-            // If Formspree returns an error, re-enable so user can retry
+            // Error: Re-enable form for retry
             button.disabled = false;
-            button.textContent = originalLabel;
+            button.textContent = 'Notify Me';
             status.textContent = "Hmm, something went wrong. Please try again.";
             submitting = false;
           }
         } catch (err) {
+          // Network error: Re-enable form for retry
           button.disabled = false;
-          button.textContent = originalLabel;
+          button.textContent = 'Notify Me';
           status.textContent = "Network error. Please try again.";
           submitting = false;
         }
