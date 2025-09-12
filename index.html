@@ -114,71 +114,63 @@ made strong. Join the list to hear when we open.">
   </style>
 </head>
 <body>
-  <!-- Hero Section -->
-  <section class="hero-section">
-    <div class="container">
-      <div class="row justify-content-center">
-        <div class="col-lg-8 text-center">
-          <div class="hero-content">
-            <!-- Use padded square version; do not lazy-load LCP image -->
-            <div class="fade-in">
-              <img src="https://mimloo.com/logo.png" class="img-fluid" width="1024" height="1024" alt="Mimloo logo">
+    <!-- Hero Section -->
+    <section class="hero-section">
+        <div class="container">
+            <div class="row justify-content-center">
+                <div class="col-lg-8 text-center">
+                    <div class="hero-content">
+                        <div class="fade-in"><img src="logo.png" class="img-fluid"></div>
+                        <h1 class="hero-quote fade-in delay-1">Made for the small, imagined for the all.</h1>
+                        <p class="hero-subtext fade-in delay-2">The land of coffee and play.</p>
+                    </div>
+                </div>
             </div>
-            <h1 class="hero-quote fade-in delay-1">Made for the small, imagined for the all.</h1>
-            <p class="hero-subtext fade-in delay-2">The land of coffee and play.</p>
-          </div>
         </div>
-      </div>
-    </div>
-  </section>
+    </section>
 
-  <!-- Quote Section -->
-  <section class="coming-soon-section">
-    <div class="container">
-      <div class="row justify-content-center">
-        <div class="col-lg-4">
-          <img class="img-fluid" src="https://mimloo.com/assets/side.png" loading="lazy" alt="Playful illustration for Mimloo">
-        </div>
-        <div class="col-lg-6">
-          <h2 class="coming-soon-title fade-in">Coming Soon</h2>
-          <p class="coming-soon-subtitle fade-in delay-1">Something beautiful is being crafted just for you.</p>
-          <p class="coming-soon-subtitle fade-in delay-2">Where coffee warms the grown-ups and play fuels the little ones, and where every visit feels like stepping into a tale that keeps unfolding.</p>
-          <p class="coming-soon-subtitle fade-in delay-3">Where big feelings fit just right.</p>
-        </div>
-      </div>
-    </div>
-  </section>
-
-  <!-- Newsletter Section -->
-  <section class="newsletter-section">
-    <div class="container text-center">
-      <div class="row justify-content-center">
-        <div class="col-lg-8">
-          <h3 class="newsletter-title fade-in">Stay in the Loop</h3>
-          <p class="newsletter-subtitle fade-in delay-1">Be the first to know when we launch. No spam, just the good stuff.</p>
-
-          <form class="newsletter-form fade-in delay-2" action="https://formspree.io/f/mandvbnv" method="POST" novalidate>
-            <!-- Honeypot (bot trap) -->
-            <input type="text" name="website" tabindex="-1" autocomplete="off" aria-hidden="true" style="position:absolute;left:-5000px;opacity:0;height:0;width:0;">
-
-            <div class="mb-3">
-              <input type="email" name="email" class="form-control" placeholder="Enter your email address" required aria-label="Email address">
+    <!-- Quote Section -->
+    <section class="coming-soon-section">
+        <div class="container">
+            <div class="row justify-content-center">
+                <div class="col-lg-4">
+                    <img class="img-fluid" src="side.png">
+                </div>
+                <div class="col-lg-6">
+                    <h2 class="coming-soon-title fade-in">Coming Soon</h2>
+                    <p class="coming-soon-subtitle fade-in delay-1">Something beautiful is being crafted just for you.</p>
+                    <p class="coming-soon-subtitle fade-in delay-2">Where coffee warms the grown-ups and play fuels the little ones, and where every visit feels like stepping into a tale that keeps unfolding.</p>
+                    <p class="coming-soon-subtitle fade-in delay-3">Where big feelings fit just right.</p>
+                </div>
             </div>
-            <button type="submit" class="btn btn-newsletter" data-label-default="Notify Me" data-label-done="Thank You!">Notify Me</button>
-            <p class="mt-3" id="newsletter-status" role="status" aria-live="polite"></p>
-          </form>
-
         </div>
-      </div>
-    </div>
-  </section>
+    </section>
 
-  <!-- Footer -->
-  <footer class="footer">
-    <div class="container">
-      <p>&copy; 2025 Mimloo. All rights reserved.</p>
-    </div>
-  </footer>
+
+    <!-- Newsletter Section -->
+    <section class="newsletter-section">
+        <div class="container text-center">
+            <div class="row justify-content-center">
+                <div class="col-lg-8">
+                    <h3 class="newsletter-title fade-in">Stay in the Loop</h3>
+                    <p class="newsletter-subtitle fade-in delay-1">Be the first to know when we launch. No spam, just the good stuff.</p>
+                    <form class="newsletter-form fade-in delay-2" action="https://formspree.io/f/mandvbnv" method="POST">
+                        <div class="mb-3">
+                            <input type="email" name="email" class="form-control" placeholder="Enter your email address" required>
+                        </div>
+                        <button type="submit" class="btn btn-newsletter">Notify Me</button>
+                    </form>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="footer">
+        <div class="container">
+            <p>&copy; 2025 Mimloo. All rights reserved.</p>
+        </div>
+    </footer>
 
   <!-- JSON-LD structured data -->
   <script type="application/ld+json">
